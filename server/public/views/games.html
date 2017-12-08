@@ -1,0 +1,64 @@
+<h1>GAMES GALORE</h1>
+
+<!-- Form for entering new games -->
+<form>
+    Game name:
+    <br>
+    <input type="text" placeholder="New Game Name" ng-model="vm.newGame.name">
+    <br> Number of players
+    <br>
+    <input type="number" placeholder="4..." ng-model="vm.newGame.numberOfPlayers">
+    <br> Game Duration:
+    <br>
+    <input type="number" placeholder="60" ng-model="vm.newGame.duration">
+    <br> Published Date:
+    <br>
+    <input type="date" placeholder="YYYY/MM/DD" ng-model="vm.newGame.publishedDate">
+    <br>
+    <br>
+    <button ng-click="vm.addNewGame(vm.newGame)"> Add Game</button>
+</form>
+{{vm.newGame}}
+
+<!-- Table for displaying games -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Game
+            </th>
+            <th>
+                Players
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Published Date
+            </th>
+            <th>
+                votes
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr ng-repeat="game in vm.games.list">
+            <td>
+                {{game.name}}
+            </td>
+            <td>
+                {{game.numberOfPlayers}}
+            </td>
+            <td>
+                {{game.durtion}}
+            </td>
+            <td>
+                {{game.publishedDate | date : medium}}
+            </td>
+            <td>
+                {{game.votes = 0}}
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mongoose Intro </title>
+    <script src="vendors/angular.js"></script>
+    <script src="vendors/angular-route.js"></script>
+    <script src="scripts/client.js"></script>
+
+
+    <!-- Controllers -->
+    <script src="scripts/controllers/games.controller.js"></script>
+
+    <!-- Services -->
+    <script src="scripts/services/games.service.js"></script>
 </head>
-<body>
-    <h1>Mongoose Intro</h1>
+<body ng-app="GamesApp">
+
+    <a href="#!games">Games</a>
+    <ng-view></ng-view>
+
 </body>
 </html>
